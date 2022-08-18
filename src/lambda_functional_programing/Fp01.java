@@ -28,9 +28,9 @@ public class Fp01 {
         System.out.println(liste);
 
 
-        listElementleriniYazdirStructured(liste);
+        listElemanlariniYazdirStructured(liste);
         System.out.println("");
-        listElementleriniYazdirFunctional(liste);
+        listElemanlariniYazdirFunctional(liste);
         System.out.println();
         ciftElemanlariYazdirStructured(liste);
         System.out.println();
@@ -44,11 +44,12 @@ public class Fp01 {
 
     }
 
-    public static void listElementleriniYazdirStructured(List<Integer> list) {
+    public static void listElemanlariniYazdirStructured(List<Integer> list) {
 
-        // Ardisik list elemanlarini ayni satirda aralarinda bosluk birakarak
+        // list elemanlarini ayni satirda aralarinda bosluk birakarak
         // yazdiran bir method olusturun(Structured).
 
+        System.out.print("Structured ile list elemanlari : ");
         for (Integer w : list) {
 
             System.out.print(w + " ");
@@ -56,11 +57,12 @@ public class Fp01 {
     } // method sonu
 
 
-    public static void listElementleriniYazdirFunctional(List<Integer> list) {
+    public static void listElemanlariniYazdirFunctional(List<Integer> list) {
 
-        // Ardisik list elemanlarini ayni satirda aralarinda bosluk birakarak
+        // list elemanlarini ayni satirda aralarinda bosluk birakarak
         // yazdiran bir method olusturun(Functional).
 
+        System.out.print("Functional ile list elemanlari : ");
         list.stream().forEach(t -> System.out.print(t + " "));
         //stream() method'u collection'dan elementleri akisa dahil etmek icin ve method'lara ulasmak icin kullanilir.
 
@@ -72,6 +74,7 @@ public class Fp01 {
         // Cift tamsayi olan list elemanlarini aynı satırda aralarında boşluk bırakarak
         // yazdıran bir method oluşturun.(Structured)
 
+        System.out.print("Structured list cift sayilari : ");
         for (Integer w : list) {
 
             if (w % 2 == 0) {
@@ -87,6 +90,7 @@ public class Fp01 {
         // Cift tamsayi olan list elemanlarini aynı satırda aralarında boşluk bırakarak
         // yazdıran bir method oluşturun(Functional).
 
+        System.out.print("Functional list cift sayilari : ");
         list.stream().filter(t -> t % 2 == 0).forEach(t -> System.out.print(t + " "));
 
 
@@ -94,9 +98,10 @@ public class Fp01 {
 
     public static void tekElemanlarinKaresiniYazdirFunctional(List<Integer> list) {
 
-        // Ardisik tek list elementlerinin karelerini aynı satirda aralarında bosluk birakarak
+        // tek list elemanlarinin karelerini ayni satirda aralarında bosluk birakarak
         // yazdiran bir method olusturan.(Functional)
 
+        System.out.print("Functional list tek sayilarin kareleri : ");
         list.stream().filter(t -> t % 2 != 0).map(t -> t * t).forEach(t -> System.out.print(t + " "));
         // elemanlarin degeri degisecekse map() method'u kullanilir.
 
@@ -104,9 +109,10 @@ public class Fp01 {
 
     public static void tekrarsizTekElemanlarinKupunuYazdir(List<Integer> list) {
 
-        // Ardisik tek list elementlerinin kuplerini tekrarsiz olarak ayni satirda aralarinda
+        // tek list elemanlarinin kuplerini tekrarsiz olarak ayni satirda aralarinda
         // bosluk birakarak yazdiran bir method olusturun.
 
+        System.out.print("Functional list tekrarsiz tek sayilarin kupleri : ");
         list.stream().distinct().filter(t -> t % 2 != 0).map(t -> t * t * t).forEach(t -> System.out.print(t + " "));
 
     }//method sonu
@@ -115,6 +121,7 @@ public class Fp01 {
 
         // Tekrarsiz cift elemanlarin karelerinin toplamini hesaplayan bir method olusturun.
 
+        System.out.print("Functional list tekrarsiz cift sayilarin kareleri toplami : ");
         Integer sum = list.stream().distinct().filter(t -> t % 2 == 0).map(t -> t * t).reduce(0, (t, u) -> t + u);
         System.out.println(sum);
 
