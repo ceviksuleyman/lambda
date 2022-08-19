@@ -3,7 +3,7 @@ package lambda_functional_programing;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fp01 {
+public class Fp01_LambdaExpression {
     /*
     1 - Lambda(Functional Programing), Java 8 ile kullanilmaya baslamistir
 
@@ -52,7 +52,7 @@ public class Fp01 {
         System.out.print("Structured, ile list elemanlari : ");
         for (Integer w : list) {
 
-            System.out.print(w + " ");
+            System.out.print(w + " "); //  8 9 131 10 9 10 2 8
         }
     } // method son
 
@@ -62,7 +62,7 @@ public class Fp01 {
         // 2 - list elemanlarini ayni satirda aralarinda bosluk birakarak yazdiran bir method olusturun(Functional).
 
         System.out.print("Functional, ile list elemanlari : ");
-        list.stream().forEach(t -> System.out.print(t + " "));
+        list.stream().forEach(t -> System.out.print(t + " ")); // 8 9 131 10 9 10 2 8
         //stream() method'u collection'dan elementleri akisa dahil etmek icin ve method'lara ulasmak icin kullanilir.
 
     }// method son
@@ -77,7 +77,7 @@ public class Fp01 {
 
             if (w % 2 == 0) {
 
-                System.out.print(w + " ");
+                System.out.print(w + " "); // 8 10 10 2 8
             }
         }
     }// method son
@@ -88,7 +88,8 @@ public class Fp01 {
         // 4 - Cift tamsayi olan list elemanlarini aynı satırda aralarında boşluk bırakarak yazdıran bir method oluşturun(Functional).
 
         System.out.print("Functional, list cift sayilari : ");
-        list.stream().filter(t -> t % 2 == 0).forEach(t -> System.out.print(t + " "));
+        list.stream().filter(t -> t % 2 == 0).
+                forEach(t -> System.out.print(t + " ")); // 8 10 10 2 8
 
 
     }//method son
@@ -98,7 +99,11 @@ public class Fp01 {
         // 5 - tek list elemanlarinin karelerini ayni satirda aralarında bosluk birakarak yazdiran bir method olusturan.(Functional)
 
         System.out.print("Functional, list tek sayilarin kareleri : ");
-        list.stream().filter(t -> t % 2 != 0).map(t -> t * t).forEach(t -> System.out.print(t + " "));
+        list.stream().
+                filter(t -> t % 2 != 0).
+                map(t -> t * t).
+                forEach(t -> System.out.print(t + " ")); // 81 17161 81
+
         // elemanlarin degeri degisecekse map() method'u kullanilir.
 
     }//method son
@@ -111,7 +116,7 @@ public class Fp01 {
         list.stream().distinct().
                 filter(t -> t % 2 != 0).
                 map(t -> t * t * t).
-                forEach(t -> System.out.print(t + " "));
+                forEach(t -> System.out.print(t + " ")); // 729 2248091
 
     }//method son
 
@@ -124,8 +129,26 @@ public class Fp01 {
                 filter(t -> t % 2 == 0).
                 map(t -> t * t).
                 reduce(0, (t, u) -> t + u);
-        System.out.println(sum);
+
+        System.out.println(sum);// 168
 
     }//method son
+
+         /*
+        stream() => datalari yukaridan asagi akis sekline getirir.Stream interface'dir dogrudan obje almaz.
+
+        distinct() => tekrarli elemanlari sadece bir defa akisa sokar.
+
+        reduce() => azaltmak, bir cok datayi tek bir dataya(max min carp top vs islemlerde) cevirmek icin kullanilir.
+
+        Bir stream icersindeki verilerin teker teker islenmesi,islenme surecinde bir onceki adimda elde edilen sonuc
+        bir sonraki adima girdi olarak sunulur.
+
+        Bu sayede yigimli bir hesaplama sureci elde edilmis olur,reduce() method'u ilk parametrede identity degeri,
+        ikinci parametrede ise BinaryOperator turunden obje kullanilir.
+
+        reduce()'da bir onceki islemde hesaplanmis deger siradaki deger ile isleme tabi tutulmaktadir.Isleme baslarken
+        bir onceki deger olmadigi icin Identity parametresinde tanimlanmaktadir.
+        */
 
 }
