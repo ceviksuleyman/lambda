@@ -51,7 +51,7 @@ public class Fp03_MethodReference {
 
         list.stream().
                 filter(Utils::ciftElemanlariSec).
-                forEach(Utils::ayniSatirdaBosluklaYazdir);
+                forEach(Utils::ayniSatirdaBosluklaYazdir); // 8 10 10 2 8
 
     }//method son
 
@@ -62,7 +62,7 @@ public class Fp03_MethodReference {
         list.stream().
                 filter(Utils::tekElemanlariSec).
                 map(Utils::karesiniAl).
-                forEach(Utils::ayniSatirdaBosluklaYazdir);
+                forEach(Utils::ayniSatirdaBosluklaYazdir); // 81 17161 81
 
     }//method son
 
@@ -73,7 +73,7 @@ public class Fp03_MethodReference {
         list.stream().distinct().
                 filter(Utils::tekElemanlariSec).
                 map(Utils::kupunuAl).
-                forEach(Utils::ayniSatirdaBosluklaYazdir);
+                forEach(Utils::ayniSatirdaBosluklaYazdir);// 729 2248091
 
     }//method son
 }
