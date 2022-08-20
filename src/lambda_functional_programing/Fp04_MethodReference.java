@@ -31,6 +31,7 @@ public class Fp04_MethodReference {
     public static void elemanlariBuyukHarfIleYazdir01(List<String> list) { // 1.YONTEM
 
         // 1 - list'in tum elemanlarini buyuk harf ile yazdiran bir method olusturun
+
         System.out.println(list.toString().toUpperCase());//[ALİ, ALİ, MARK, AMANDA, CHRİSTOPHER, JACKSON, MARİANO, ALBERTO, TUCKER, BENJAMİN]
 
         list.stream().map((String::toUpperCase)).forEach(Utils::ayniSatirdaBosluklaYazdir);
