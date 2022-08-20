@@ -52,7 +52,7 @@ public class Fp02_LambdaExpression {
 
     }//method son
 
-    public static void getMaxEleman01(List<Integer> list) { // 1.yontem
+    public static void getMaxEleman01(List<Integer> list) { // 1.YONTEM
 
         // 9 - list elemanlari arasindan en buyuk degeri bulan bir method olusturun.
 
@@ -63,7 +63,7 @@ public class Fp02_LambdaExpression {
 
     }//method son
 
-    public static void getMaxEleman02(List<Integer> list) { // 2.yontem
+    public static void getMaxEleman02(List<Integer> list) { // 2.YONTEM
 
         System.out.print("2.yontem listteki en buyuk eleman : ");
         Integer max = list.stream().distinct().sorted().reduce(Integer.MIN_VALUE, (t, u) -> u);
@@ -72,7 +72,7 @@ public class Fp02_LambdaExpression {
 
     }//method son
 
-    public static void getMinEleman01(List<Integer> list) { // 1.yontem
+    public static void getMinEleman01(List<Integer> list) { // 1.YONTEM
 
         // Odev - list elemanlari arasindan en kucuk degeri bulan method olusturun
 
@@ -87,7 +87,7 @@ public class Fp02_LambdaExpression {
 
     // sorted() => natural order'a gore siralanmis sekilde akis dondurur.Tekrarli kullanilirsa en son kullanilan aktif olur
 
-    public static void getMinEleman02(List<Integer> list) { // 2.yontem
+    public static void getMinEleman02(List<Integer> list) { // 2.YONTEM
 
         System.out.print("2.yontem listteki en kucuk eleman : ");
         Integer min = list.stream().distinct().
@@ -97,7 +97,7 @@ public class Fp02_LambdaExpression {
 
     }//method son
 
-    public static void getYedidenBuyukCiftMin01(List<Integer> list) { // 1.yontem
+    public static void getYedidenBuyukCiftMin01(List<Integer> list) { // 1.YONTEM
 
         // 10 - list elemanlari arasinda 7'den buyuk cift en kucuk degeri bulan method olusturun.
 
@@ -111,7 +111,7 @@ public class Fp02_LambdaExpression {
 
     }//method son
 
-    public static void getYedidenBuyukCiftMin02(List<Integer> list) { // 2.yontem
+    public static void getYedidenBuyukCiftMin02(List<Integer> list) { // 2.YONTEM
 
         System.out.print("2.yontem 7'den buyuk cift min sayi : ");
         Integer min = list.stream().distinct().
@@ -123,13 +123,13 @@ public class Fp02_LambdaExpression {
 
     }//method son
 
-    public static void getYedidenBuyukCiftMin03(List<Integer> list) { // 3.yontem
+    public static void getYedidenBuyukCiftMin03(List<Integer> list) { // 3.YONTEM
 
         System.out.print("3.yontem 7'den buyuk cift min sayi : ");
         Integer min = list.stream().
                 filter(t -> t % 2 == 0).
                 filter(t -> t > 7).
-                sorted().findFirst().get();
+                sorted().findFirst().get(); // natural order'den sonra ilk elemani aldi
 
         System.out.print(min); // 8
 

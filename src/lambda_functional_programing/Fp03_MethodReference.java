@@ -1,14 +1,16 @@
 package lambda_functional_programing;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Fp03_MethodReference {
     /*
-    1) t-> "logic" , (t,u) -> "logic"  => Bu yapiya "Lambda Expression"
+    1) t-> "logic" , (t,u) -> "logic"  => Bu yapi "Lambda Expression"
 
-    2) Functional programming kapsaminda "Lambda Expession" kullanilabilir ama onerilmez.
-    "Lambda Expession" yerine "Method Reference" tercih edilir.
+    2) Functional programming kapsaminda "Lambda Expression" kullanilabilir ama onerilmez.
+    "Lambda Expression" yerine "Method Reference" tercih edilir.
 
     3) Method Reference kullanimi "Class Name :: Method Name"
 
@@ -35,6 +37,15 @@ public class Fp03_MethodReference {
         tekElemanlarinKareleriniYazdir(liste);
         System.out.println();
         tekrarsizTekElemanlarinKupunuYazdir(liste);
+        System.out.println();
+        tekrarsizCiftElemanlarinKareToplami01(liste);
+        tekrarsizCiftElemanlarinKareToplami02(liste);
+        tekrarsizCiftElemanlarinKareToplami03(liste);
+        tekrarsizCiftElemanlarinKupleriCarpimi(liste);
+        getMaxEleman(liste);
+        getMinEleman(liste);
+        yedidenBuyukCiftMinDeger(liste);
+        tersSiraliTekrarsizElemanlarinYarisi(liste);
     }
 
     public static void listElemanlariniYazdirFunctional(List<Integer> list) {
@@ -74,6 +85,102 @@ public class Fp03_MethodReference {
                 filter(Utils::tekElemanlariSec).
                 map(Utils::kupunuAl).
                 forEach(Utils::ayniSatirdaBosluklaYazdir);// 729 2248091
+
+    }//method son
+
+    public static void tekrarsizCiftElemanlarinKareToplami01(List<Integer> list) { // 1.YONTEM
+
+        // 5 - Tekrarsiz cift elemanlarin kareleri toplamini yazdiran bir method olusturun.
+
+        Integer sum = list.stream().distinct().
+                filter(Utils::ciftElemanlariSec).
+                map(Utils::karesiniAl).
+                reduce(Math::addExact).get();
+
+        System.out.println(sum); // 168
+
+    }//method son
+
+    public static void tekrarsizCiftElemanlarinKareToplami02(List<Integer> list) { // 2.YONTEM
+
+        Integer sum = list.stream().distinct().
+                filter(Utils::ciftElemanlariSec).
+                map(Utils::karesiniAl).
+                reduce(Math::addExact).get();
+
+        System.out.println(sum); // 168
+
+    }//method son
+
+    public static void tekrarsizCiftElemanlarinKareToplami03(List<Integer> list) { // 3.YONTEM
+
+        Integer sum = list.stream().distinct().
+                filter(Utils::ciftElemanlariSec).
+                map(Utils::karesiniAl).
+                reduce(0, Integer::sum);
+
+        System.out.println(sum); // 168
+
+    }//method son
+
+    public static void tekrarsizCiftElemanlarinKupleriCarpimi(List<Integer> list) {
+
+        // 6 - Tekrarsiz cift elemanlarin kupunun carpimini hesaplayan bir  method olusturun.
+
+        Integer carpim = list.stream().distinct().
+                filter(Utils::ciftElemanlariSec).
+                map(Utils::kupunuAl).
+                reduce(1, Math::multiplyExact);
+
+        System.out.println(carpim);// 4096000 (10,8,2) elemanlar
+
+    }//method son
+
+    public static void getMaxEleman(List<Integer> list) {
+
+        // 7 - list elemanlari arasindan en buyuk degeri bulan method olusturun
+
+        Integer max = list.stream().distinct().reduce(Math::max).get();
+
+        System.out.println(max); // 131
+
+    }//method son
+
+    public static void getMinEleman(List<Integer> list) {
+
+        // 8 - list elemanlari arasindan en kucuk degeri bulan method olusturun
+
+        Integer min = list.stream().distinct().reduce(Integer.MAX_VALUE, Math::min);
+
+        System.out.println(min); // 2
+
+    }//method son
+
+    public static void yedidenBuyukCiftMinDeger(List<Integer> list) {
+
+        // 9 - list elemanlari arasindan 7'den buyuk, cift, en kucuk degeri bulan method olusturun
+
+        Integer min = list.stream().distinct().
+                filter(t -> t > 7).filter(Utils::ciftElemanlariSec).
+                reduce(Math::min).get();
+
+        System.out.println(min); // 8
+
+    }//method son
+
+    public static void tersSiraliTekrarsizElemanlarinYarisi(List<Integer> list) {
+
+        // 10 - Ters siralama ile tekrarsiz ve 5'ten buyuk elemanlarin yari(/2) degerlerini bulan method olusturun
+
+        List<Double> methodList =
+                list.stream(). // akisa alip gerekli methodlari kullanmamizi sagladi
+                distinct(). // tekrarli olanlarin sadece ilkini aldi
+                filter(t -> t > 5). // kosula gore filtreleme yapti
+                map(Utils::yarisiniAl). // her elemanin degeri degisti
+                sorted(Comparator.reverseOrder()). // natural order'a gore ters'ten siraladi
+                collect(Collectors.toList()); // Collection'a cevirdi
+
+        System.out.println(methodList); // [65.5, 5.0, 4.5, 4.0]
 
     }//method son
 }
