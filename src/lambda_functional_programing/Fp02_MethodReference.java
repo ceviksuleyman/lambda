@@ -106,7 +106,7 @@ public class Fp02_MethodReference {
         Integer sum = list.stream().distinct().
                 filter(Utils::ciftElemanlariSec).
                 map(Utils::karesiniAl).
-                reduce(Math::addExact).get();
+                reduce(0,Math::addExact);
 
         System.out.println(sum); // 168
 
