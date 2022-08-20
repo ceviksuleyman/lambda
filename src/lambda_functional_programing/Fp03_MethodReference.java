@@ -3,184 +3,161 @@ package lambda_functional_programing;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Fp03_MethodReference {
-    /*
-    1) t-> "logic" , (t,u) -> "logic"  => Bu yapi "Lambda Expression"
 
-    2) Functional programming kapsaminda "Lambda Expression" kullanilabilir ama onerilmez.
-    "Lambda Expression" yerine "Method Reference" tercih edilir.
-
-    3) Method Reference kullanimi "Class Name :: Method Name"
-
-    Ayni zamanda kendi class'larinizi da kullanabilirsiniz.
-    Ornegin bir Animal class'iniz var ve bu class "eat()" methoduna sahip ==> "Animal :: eat"
-   */
     public static void main(String[] args) {
 
-        List<Integer> liste = new ArrayList<>();
-        liste.add(8);
-        liste.add(9);
-        liste.add(131);
-        liste.add(10);
-        liste.add(9);
-        liste.add(10);
-        liste.add(2);
-        liste.add(8);
+        List<String> liste = new ArrayList<>();
+        liste.add("Ali");
+        liste.add("Ali");
+        liste.add("Mark");
+        liste.add("Amanda");
+        liste.add("Christopher");
+        liste.add("Jackson");
+        liste.add("Mariano");
+        liste.add("Alberto");
+        liste.add("Tucker");
+        liste.add("Benjamin");
         System.out.println(liste);
 
-        listElemanlariniYazdirFunctional(liste);
+        elemanlariBuyukHarfIleYazdir01(liste);
         System.out.println();
-        ciftElemanlariYazdirFunctional(liste);
+        //elemanlariBuyukHarfIleYazdir02(liste);
+        uzunlugaGoreYazdir(liste);
         System.out.println();
-        tekElemanlarinKareleriniYazdir(liste);
+        uzunlugaGoreTerstenYazdir(liste);
         System.out.println();
-        tekrarsizTekElemanlarinKupunuYazdir(liste);
+        sonKaraktereGoreTekrarsizYazdir(liste);
         System.out.println();
-        tekrarsizCiftElemanlarinKareToplami01(liste);
-        tekrarsizCiftElemanlarinKareToplami02(liste);
-        tekrarsizCiftElemanlarinKareToplami03(liste);
-        tekrarsizCiftElemanlarinKupleriCarpimi(liste);
-        getMaxEleman(liste);
-        getMinEleman(liste);
-        yedidenBuyukCiftMinDeger(liste);
-        tersSiraliTekrarsizElemanlarinYarisi(liste);
+        uzunlukVeIlkHarfeGoreSiralaYazdir(liste);
+        System.out.println();
+        //uzunlukBestenBuyukleriSil(liste);
+        //ilkVeSonKaraktereGoreSil01(liste);
+        //ilkVeSonKaraktereGoreSil02(liste);
+        uzunlukVeVerilenKaraktereGoreSil(liste);
+
     }
 
-    public static void listElemanlariniYazdirFunctional(List<Integer> list) {
+    public static void elemanlariBuyukHarfIleYazdir01(List<String> list) { // 1.YONTEM
 
-        // 1 - list elemanlarini ayni satirda aralarinda bosluk birakarak yazdiran method olusturun.
+        // 1 - list'in tum elemanlarini buyuk harf ile yazdiran bir method olusturun
 
-        list.stream().forEach(Utils::ayniSatirdaBosluklaYazdir); // 8 9 131 10 9 10 2 8
+        System.out.println(list.toString().toUpperCase());//[ALİ, ALİ, MARK, AMANDA, CHRİSTOPHER, JACKSON, MARİANO, ALBERTO, TUCKER, BENJAMİN]
+
+        list.stream().map((String::toUpperCase)).forEach(Utils::ayniSatirdaBosluklaYazdir);
+        // output : ALİ ALİ MARK AMANDA CHRİSTOPHER JACKSON MARİANO ALBERTO TUCKER BENJAMİN
 
     }//method son
 
-    public static void ciftElemanlariYazdirFunctional(List<Integer> list) {
+    /*
+    public static void elemanlariBuyukHarfIleYazdir02(List<String> list){ // 2.YONTEM
 
-        // 2 - list'in cift sayi olan elemanlarini aralarinda bosluk birakarak yazdiran method olusturun
+        list.replaceAll(String::toUpperCase); // list mutable oldugu icin kalici degisiklik olur
+
+        System.out.println(list); // output : [ALİ, ALİ, MARK, AMANDA, CHRİSTOPHER, JACKSON, MARİANO, ALBERTO, TUCKER, BENJAMİN]
+
+    }//method son
+    */
+
+    public static void uzunlugaGoreYazdir(List<String> list) {
+
+        // 2 - Elemanlari uzunluklarina gore siralayip yazdiran bir method olusturun
 
         list.stream().
-                filter(Utils::ciftElemanlariSec).
-                forEach(Utils::ayniSatirdaBosluklaYazdir); // 8 10 10 2 8
+                sorted(Comparator.comparing(String::length)). //Comparator.comparing => siralama kosulunu belirtmek icin kullanilir
+                forEach(Utils::ayniSatirdaBosluklaYazdir);
+        //output : Ali Ali Mark Amanda Tucker Jackson Mariano Alberto Benjamin Christopher
 
     }//method son
 
-    public static void tekElemanlarinKareleriniYazdir(List<Integer> list) {
+    public static void uzunlugaGoreTerstenYazdir(List<String> list) {
 
-        // 3 - list'in tek sayi olan elemanlarinin karelerini ayni satirda aralarinda bosluk olarak yazdiran method olusturun
+        // 3 - Elemanlari uzunluklarina gore ters siralayip yazdiran bir method olusturun
 
         list.stream().
-                filter(Utils::tekElemanlariSec).
-                map(Utils::karesiniAl).
-                forEach(Utils::ayniSatirdaBosluklaYazdir); // 81 17161 81
+                sorted(Comparator.comparing(String::length).
+                        reversed()).
+                forEach(Utils::ayniSatirdaBosluklaYazdir);
+        //output:Christopher Benjamin Jackson Mariano Alberto Amanda Tucker Mark Ali Ali
 
     }//method son
 
-    public static void tekrarsizTekElemanlarinKupunuYazdir(List<Integer> list) {
+    public static void sonKaraktereGoreTekrarsizYazdir(List<String> list) {
 
-        // 4 - list'in tek sayi olan elemanlarinin kuplerini tekrarsiz olarak ayni satirda aralarda bosluk birakarak yazdiran method olusturun
+        // 4 - Elemanlari son karakterlerine gore siralayip tekrarsiz yazdiran bir method olusturun
 
+        //sorted(Comparator.comparing(t -> t.charAt(t.length()-1)))
         list.stream().distinct().
-                filter(Utils::tekElemanlariSec).
-                map(Utils::kupunuAl).
-                forEach(Utils::ayniSatirdaBosluklaYazdir);// 729 2248091
+                sorted(Comparator.comparing(Utils::sonKarakterAl)).
+                forEach(Utils::ayniSatirdaBosluklaYazdir);
+        //output:Amanda Ali Mark Jackson Benjamin Mariano Alberto Christopher Tucker
 
     }//method son
 
-    public static void tekrarsizCiftElemanlarinKareToplami01(List<Integer> list) { // 1.YONTEM
+    public static void uzunlukVeIlkHarfeGoreSiralaYazdir(List<String> list) {
 
-        // 5 - Tekrarsiz cift elemanlarin kareleri toplamini yazdiran bir method olusturun.
+        // 5 - Elemanlari once uzunluk ve sonra ilk karakterine gore siralayip yazdiran method olusturun
 
-        Integer sum = list.stream().distinct().
-                filter(Utils::ciftElemanlariSec).
-                map(Utils::karesiniAl).
-                reduce(Math::addExact).get();
-
-        System.out.println(sum); // 168
+        list.stream().sorted(Comparator.comparing(String::length).// uzunluk kontrol'den sonra
+                thenComparing(Utils::ilkKarakteriAl)). // sonra ilk harf kontrol
+                forEach(Utils::ayniSatirdaBosluklaYazdir);
+        //output:Ali Ali Mark Amanda Tucker Alberto Jackson Mariano Benjamin Christopher
 
     }//method son
 
-    public static void tekrarsizCiftElemanlarinKareToplami02(List<Integer> list) { // 2.YONTEM
 
-        Integer sum = list.stream().distinct().
-                filter(Utils::ciftElemanlariSec).
-                map(Utils::karesiniAl).
-                reduce(Math::addExact).get();
+    /*
+   public static void uzunlukBestenBuyukleriSil(List<String> list){
 
-        System.out.println(sum); // 168
+       // 6 - Uzunlugu 5'ten buyuk olan elemanlari silen bir method olusturun
 
-    }//method son
+       list.removeIf(t-> t.length() > 5); // uzunluk 5'ten buyuk ise sil
 
-    public static void tekrarsizCiftElemanlarinKareToplami03(List<Integer> list) { // 3.YONTEM
+       System.out.println(list); // [Ali, Ali, Mark]
 
-        Integer sum = list.stream().distinct().
-                filter(Utils::ciftElemanlariSec).
-                map(Utils::karesiniAl).
-                reduce(0, Integer::sum);
 
-        System.out.println(sum); // 168
+   }//method son
+   */
 
-    }//method son
 
-    public static void tekrarsizCiftElemanlarinKupleriCarpimi(List<Integer> list) {
 
-        // 6 - Tekrarsiz cift elemanlarin kupunun carpimini hesaplayan bir  method olusturun.
+     /*
+    public static void ilkVeSonKaraktereGoreSil01(List<String> list) { // 1.YONTEM
 
-        Integer carpim = list.stream().distinct().
-                filter(Utils::ciftElemanlariSec).
-                map(Utils::kupunuAl).
-                reduce(1, Math::multiplyExact);
+        // 7 - ‘A’, ‘a’ ile baslayan ya da ‘N’, ‘n’ ile biten elemanlari silen bir method olusturun.
 
-        System.out.println(carpim);// 4096000 (10,8,2) elemanlar
+        list.removeIf(t -> t.charAt(0) == 'a'
+                || t.charAt(0) == 'A'
+                || t.charAt(t.length() - 1) == 'n'
+                || t.charAt(t.length() - 1) == 'N');
+
+        System.out.println(list);// [Mark, Christopher, Mariano, Tucker]
 
     }//method son
+     */
 
-    public static void getMaxEleman(List<Integer> list) {
+    /*
+    public static void ilkVeSonKaraktereGoreSil02(List<String> list) { // 2.YONTEM
 
-        // 7 - list elemanlari arasindan en buyuk degeri bulan method olusturun
+        list.removeIf(t -> t.startsWith("A") || t.startsWith("a")
+                || t.endsWith("n") || t.endsWith("N"));
 
-        Integer max = list.stream().distinct().reduce(Math::max).get();
-
-        System.out.println(max); // 131
-
-    }//method son
-
-    public static void getMinEleman(List<Integer> list) {
-
-        // 8 - list elemanlari arasindan en kucuk degeri bulan method olusturun
-
-        Integer min = list.stream().distinct().reduce(Integer.MAX_VALUE, Math::min);
-
-        System.out.println(min); // 2
+        System.out.println(list);// [Mark, Christopher, Mariano, Tucker]
 
     }//method son
+     */
 
-    public static void yedidenBuyukCiftMinDeger(List<Integer> list) {
+    public static void uzunlukVeVerilenKaraktereGoreSil(List<String> list) {
 
-        // 9 - list elemanlari arasindan 7'den buyuk, cift, en kucuk degeri bulan method olusturun
+        // 8 - uzunlugu 8 ile 10 arasinda olan ya da "o" ile biten elemanlari silen bir method olusturun
 
-        Integer min = list.stream().distinct().
-                filter(t -> t > 7).filter(Utils::ciftElemanlariSec).
-                reduce(Math::min).get();
+        list.removeIf(t -> t.length() > 7 && t.length() < 11 || t.endsWith("o"));
+        // remove : Benjamin,Alberto,Mariano
 
-        System.out.println(min); // 8
+        System.out.println(list);// [Ali, Ali, Mark, Amanda, Christopher, Jackson, Tucker]
 
-    }//method son
+    }// method son
 
-    public static void tersSiraliTekrarsizElemanlarinYarisi(List<Integer> list) {
 
-        // 10 - Ters siralama ile tekrarsiz ve 5'ten buyuk elemanlarin yari(/2) degerlerini bulan method olusturun
-
-        List<Double> methodList =
-                list.stream(). // akisa alip gerekli methodlari kullanmamizi sagladi
-                distinct(). // tekrarli olanlarin sadece ilkini aldi
-                filter(t -> t > 5). // kosula gore filtreleme yapti
-                map(Utils::yarisiniAl). // her elemanin degeri degisti
-                sorted(Comparator.reverseOrder()). // natural order'a gore ters'ten siraladi
-                collect(Collectors.toList()); // Collection'a cevirdi
-
-        System.out.println(methodList); // [65.5, 5.0, 4.5, 4.0]
-
-    }//method son
 }
