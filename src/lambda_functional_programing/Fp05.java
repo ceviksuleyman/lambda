@@ -28,25 +28,25 @@ public class Fp05 {
 
     }
 
-    public static boolean ortalamaPuanlarVerilenSayidanBuyukMu(List<Courses> list, double x) {
 
-        // 1 - Tum ortalama puanlarin verilen sayidan buyuk olup olmadigi kontrol etmek icin bir method olusturun
+    // 1 - Tum ortalama puanlarin verilen sayidan buyuk olup olmadigi kontrol etmek icin bir method olusturun
+    public static boolean ortalamaPuanlarVerilenSayidanBuyukMu(List<Courses> list, double x) {
 
         return list.stream().allMatch(t -> t.getAverageScore() > x);
 
     }//method son
 
-    public static boolean kelimeKursAdlariIcndeVarMi(List<Courses> list, String str) {
 
-        // 2 - Kurs adlarindan en az birinin verilen kelimeyi icerip icermedigini kontrol etmek icin method olusturun
+    // 2 - Kurs adlarindan en az birinin verilen kelimeyi icerip icermedigini kontrol etmek icin method olusturun
+    public static boolean kelimeKursAdlariIcndeVarMi(List<Courses> list, String str) {
 
         return list.stream().anyMatch(t -> t.getCourseName().toLowerCase().contains(str.toLowerCase()));
 
     }//method son
 
-    public static void ortalamasiEnYuksekKursAdi(List<Courses> list) {
 
-        // 3 - ortalama puani en yuksek olan kursu yazdirmak icin bir method olusturun
+    // 3 - ortalama puani en yuksek olan kursu yazdirmak icin bir method olusturun
+    public static void ortalamasiEnYuksekKursAdi(List<Courses> list) {
 
         int average = list.stream().
                 max(Comparator.comparing(Courses::getAverageScore)).get().getAverageScore();
@@ -59,9 +59,9 @@ public class Fp05 {
 
     }//method son
 
-    public static List<Courses> ortalamaPuanGoreSiralaVeIlkVerilenleriAtla(List<Courses> list, int x) {
 
-        // 4 - list elemanlarini artan duzende ortalama puana gore siralayin ve ilk verilenleri atlayin.
+    // 4 - list elemanlarini artan duzende ortalama puana gore siralayin ve ilk verilenleri atlayin.
+    public static List<Courses> ortalamaPuanGoreSiralaVeIlkVerilenleriAtla(List<Courses> list, int x) {
 
         return list.stream().
                 sorted(Comparator.comparing(Courses::getAverageScore)).skip(x).collect(Collectors.toList());

@@ -15,9 +15,8 @@ public class Fp04 {
 
     }
 
+    // 1 - 7'den 100'e kadar integer degerlerinin toplamini bulan method olusturun
     public static int get7den100eToplam01() { // 1.YONTEM
-
-        // 1 - 7'den 100'e kadar integer degerlerinin toplamini bulan method olusturunÜ
 
         return IntStream.range(7, 101).reduce(Math::addExact).getAsInt(); // 5029
 
@@ -33,17 +32,17 @@ public class Fp04 {
 
     }//method son
 
-    public static int get2den11eCarpim() {
 
-        // 2- 2'den 11'e kadar integer degerlerinin carpimini bulan method olusturun
+    // 2- 2'den 11'e kadar integer degerlerinin carpimini bulan method olusturun
+    public static int get2den11eCarpim() {
 
         return IntStream.rangeClosed(2, 11).reduce(Math::multiplyExact).getAsInt();// 39916800
 
     }//method son
 
-    public static int faktoryelHesapla(int x) {
 
-        // 3 - Faktoryel hesaplayan bir method olusturun (5 factorial = 1*2*3*4*5  ==> 5! = 1*2*3*4*5)
+    // 3 - Faktoryel hesaplayan bir method olusturun (5 factorial = 1*2*3*4*5  ==> 5! = 1*2*3*4*5)
+    public static int faktoryelHesapla(int x) {
 
         if (x > 0 && x < 13) { // 12'den sonra int kapsami disinda
 
@@ -55,9 +54,9 @@ public class Fp04 {
 
     }// method son
 
-    public static int xyArasindakiCiftSayiTopla(int x, int y) {
 
-        // 4 - Verilen iki sayi arasindaki cift sayilarin toplamini bulan method olusturun
+    // 4 - Verilen iki sayi arasindaki cift sayilarin toplamini bulan method olusturun
+    public static int xyArasindakiCiftSayiTopla(int x, int y) {
 
         if (x < y) {
 
@@ -67,10 +66,10 @@ public class Fp04 {
 
     }//method son
 
-    public static int ikiSayiArasindakiSayilarinRakamlarininToplami(int x, int y) {
 
-        // 5 - iki sayi arasindaki tum sayilarin rakamlarinin toplamini hesaplayan bir method olusturun
-        // 23 and 32 ==> 2+3 + 2+4 + 2+5 + 2+6 + 2+7 + 2+8 + 2+9 + 3+0 + 3+1 + 3+2 ==> 68
+    // 5 - iki sayi arasindaki tum sayilarin rakamlarinin toplamini hesaplayan bir method olusturun
+    // 23 and 32 ==> 2+3 + 2+4 + 2+5 + 2+6 + 2+7 + 2+8 + 2+9 + 3+0 + 3+1 + 3+2 ==> 68
+    public static int ikiSayiArasindakiSayilarinRakamlarininToplami(int x, int y) {
 
         int z = 0;
         if (x > y) {
