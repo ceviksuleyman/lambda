@@ -43,4 +43,16 @@ public class Utils {
         return str.charAt(0);
     }//method son
 
+    public static int rakamlarToplaminiAl(int x) {
+
+        int sum = 0;
+        while (x > 0) {
+
+            sum += x % 10;
+            x /= 10;
+        }
+        return sum;
+
+    }//method son
+
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class Fp03_MethodReference {
+public class Fp03 {
 
     public static void main(String[] args) {
 
@@ -35,7 +35,10 @@ public class Fp03_MethodReference {
         //uzunlukBestenBuyukleriSil(liste);
         //ilkVeSonKaraktereGoreSil01(liste);
         //ilkVeSonKaraktereGoreSil02(liste);
-        uzunlukVeVerilenKaraktereGoreSil(liste);
+        //uzunlukVeVerilenKaraktereGoreSil(liste);
+        System.out.println(uzunlugu12denAzMi(liste));
+        System.out.println(xIleBaslayanYokMu(liste));
+        System.out.println(rIleBitenVarMi(liste));
 
     }
 
@@ -46,6 +49,7 @@ public class Fp03_MethodReference {
         System.out.println(list.toString().toUpperCase());//[ALİ, ALİ, MARK, AMANDA, CHRİSTOPHER, JACKSON, MARİANO, ALBERTO, TUCKER, BENJAMİN]
 
         list.stream().map((String::toUpperCase)).forEach(Utils::ayniSatirdaBosluklaYazdir);
+
         // output : ALİ ALİ MARK AMANDA CHRİSTOPHER JACKSON MARİANO ALBERTO TUCKER BENJAMİN
 
     }//method son
@@ -65,8 +69,9 @@ public class Fp03_MethodReference {
         // 2 - Elemanlari uzunluklarina gore siralayip yazdiran bir method olusturun
 
         list.stream().
-                sorted(Comparator.comparing(String::length)). //Comparator.comparing => siralama kosulunu belirtmek icin kullanilir
+                sorted(Comparator.comparing(String::length)). //Comparator.comparing() => siralama kosulunu belirtmek icin kullanilir
                 forEach(Utils::ayniSatirdaBosluklaYazdir);
+
         //output : Ali Ali Mark Amanda Tucker Jackson Mariano Alberto Benjamin Christopher
 
     }//method son
@@ -79,7 +84,8 @@ public class Fp03_MethodReference {
                 sorted(Comparator.comparing(String::length).
                         reversed()).
                 forEach(Utils::ayniSatirdaBosluklaYazdir);
-        //output:Christopher Benjamin Jackson Mariano Alberto Amanda Tucker Mark Ali Ali
+
+        //output : Christopher Benjamin Jackson Mariano Alberto Amanda Tucker Mark Ali Ali
 
     }//method son
 
@@ -91,7 +97,8 @@ public class Fp03_MethodReference {
         list.stream().distinct().
                 sorted(Comparator.comparing(Utils::sonKarakterAl)).
                 forEach(Utils::ayniSatirdaBosluklaYazdir);
-        //output:Amanda Ali Mark Jackson Benjamin Mariano Alberto Christopher Tucker
+
+        //output : Amanda Ali Mark Jackson Benjamin Mariano Alberto Christopher Tucker
 
     }//method son
 
@@ -99,10 +106,11 @@ public class Fp03_MethodReference {
 
         // 5 - Elemanlari once uzunluk ve sonra ilk karakterine gore siralayip yazdiran method olusturun
 
-        list.stream().sorted(Comparator.comparing(String::length).// uzunluk kontrol'den sonra
+        list.stream().sorted(Comparator.comparing(String::length).// uzunluk kontrol'den
                 thenComparing(Utils::ilkKarakteriAl)). // sonra ilk harf kontrol
                 forEach(Utils::ayniSatirdaBosluklaYazdir);
-        //output:Ali Ali Mark Amanda Tucker Alberto Jackson Mariano Benjamin Christopher
+
+        //output : Ali Ali Mark Amanda Tucker Alberto Jackson Mariano Benjamin Christopher
 
     }//method son
 
@@ -121,7 +129,6 @@ public class Fp03_MethodReference {
    */
 
 
-
      /*
     public static void ilkVeSonKaraktereGoreSil01(List<String> list) { // 1.YONTEM
 
@@ -137,6 +144,7 @@ public class Fp03_MethodReference {
     }//method son
      */
 
+
     /*
     public static void ilkVeSonKaraktereGoreSil02(List<String> list) { // 2.YONTEM
 
@@ -148,6 +156,8 @@ public class Fp03_MethodReference {
     }//method son
      */
 
+
+    /*
     public static void uzunlukVeVerilenKaraktereGoreSil(List<String> list) {
 
         // 8 - uzunlugu 8 ile 10 arasinda olan ya da "o" ile biten elemanlari silen bir method olusturun
@@ -158,6 +168,43 @@ public class Fp03_MethodReference {
         System.out.println(list);// [Ali, Ali, Mark, Amanda, Christopher, Jackson, Tucker]
 
     }// method son
+    */
+
+    public static boolean uzunlugu12denAzMi(List<String> list) {
+
+        //9 - Tum elemanlarin uzunluklarinin 12'den az olup olmadigini kontrol eden method
+
+        System.out.print("elemanlarin Uzunluklari 12 den az mi : ");
+
+        return list.stream().allMatch(t -> t.length() < 12); // true
+
+        // allMatch() => hepsini kontrol ediyor,elemanlarin tumunun uzunlugu 12 den kucukse true
+
+    }//method son
+
+    public static boolean xIleBaslayanYokMu(List<String> list) {
+
+        //10 - Hicbir elemanin "X" ile baslamadigini kontrol eden method olusturun
+
+        System.out.print("x ile baslayan eleman yok mu : ");
+
+        return list.stream().noneMatch(t -> t.startsWith("x") || t.startsWith("X")); // true
+
+        // noneMatch => hicbirisi sarti saglamiyorsa true x ile baslayan yok mu diye kontrol eder
+
+    }//method son
+
+    public static boolean rIleBitenVarMi(List<String> list){
+
+        //11 - Herhangi bir elemanin "r" ile bitip bitmedigini kontrol eden method olusturun
+
+        System.out.print("r ile biten eleman varmi : ");
+
+        return list.stream().anyMatch(t -> t.endsWith("r") || t.endsWith("R")); // true
+
+        // anyMatch => herhangi bir eleman sarti sagliyorsa true
+
+    }//method son
 
 
 }
