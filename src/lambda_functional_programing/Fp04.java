@@ -23,7 +23,7 @@ public class Fp04 {
 
         //range() => sondakini dahil etmedigi icin 101 de bitirdik
 
-    }// method
+    }// method son
 
     public static int get7den100eToplam02() { // 2.YONTEM
 
@@ -33,6 +33,8 @@ public class Fp04 {
 
     }//method son
 
+    //-----------------------------------------------------------------------------------------------------------
+
     public static int get2den11eCarpim() {
 
         // 2- 2'den 11'e kadar integer degerlerinin carpimini bulan method olusturun
@@ -40,6 +42,8 @@ public class Fp04 {
         return IntStream.rangeClosed(2, 11).reduce(Math::multiplyExact).getAsInt();// 39916800
 
     }//method son
+
+    //-----------------------------------------------------------------------------------------------------------
 
     public static int faktoryelHesapla(int x) {
 
@@ -55,6 +59,8 @@ public class Fp04 {
 
     }// method son
 
+    //-----------------------------------------------------------------------------------------------------------
+
     public static int xyArasindakiCiftSayiTopla(int x, int y) {
 
         // 4 - Verilen iki sayi arasindaki cift sayilarin toplamini bulan method olusturun
@@ -66,6 +72,8 @@ public class Fp04 {
         } else return IntStream.rangeClosed(y, x).filter(Utils::ciftElemanlariSec).reduce(Math::addExact).getAsInt();
 
     }//method son
+
+    //-----------------------------------------------------------------------------------------------------------
 
     public static int ikiSayiArasindakiSayilarinRakamlarininToplami(int x, int y) {
 

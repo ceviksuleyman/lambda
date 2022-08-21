@@ -28,6 +28,8 @@ public class Fp05 {
 
     }
 
+
+
     public static boolean ortalamaPuanlarVerilenSayidanBuyukMu(List<Courses> list, double x) {
 
         // 1 - Tum ortalama puanlarin verilen sayidan buyuk olup olmadigi kontrol etmek icin bir method olusturun
@@ -36,6 +38,8 @@ public class Fp05 {
 
     }//method son
 
+    //-----------------------------------------------------------------------------------------------------------
+
     public static boolean kelimeKursAdlariIcndeVarMi(List<Courses> list, String str) {
 
         // 2 - Kurs adlarindan en az birinin verilen kelimeyi icerip icermedigini kontrol etmek icin method olusturun
@@ -43,6 +47,8 @@ public class Fp05 {
         return list.stream().anyMatch(t -> t.getCourseName().toLowerCase().contains(str.toLowerCase()));
 
     }//method son
+
+    //-----------------------------------------------------------------------------------------------------------
 
     public static void ortalamasiEnYuksekKursAdi(List<Courses> list) {
 
@@ -58,6 +64,8 @@ public class Fp05 {
         System.out.println("ortalama puani en yuksek kurs : " + course + " => : " + average);
 
     }//method son
+
+    //-----------------------------------------------------------------------------------------------------------
 
     public static List<Courses> ortalamaPuanGoreSiralaVeIlkVerilenleriAtla(List<Courses> list, int x) {
 

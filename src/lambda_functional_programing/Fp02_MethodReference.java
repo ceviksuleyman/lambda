@@ -56,6 +56,8 @@ public class Fp02_MethodReference {
 
     }//method son
 
+    //---------------------------------------------------------------------------------------------------------
+
     public static void ciftElemanlariYazdirFunctional(List<Integer> list) {
 
         // 2 - list'in cift sayi olan elemanlarini aralarinda bosluk birakarak yazdiran method olusturun
@@ -65,6 +67,8 @@ public class Fp02_MethodReference {
                 forEach(Utils::ayniSatirdaBosluklaYazdir); // 8 10 10 2 8
 
     }//method son
+
+    //----------------------------------------------------------------------------------------------------------
 
     public static void tekElemanlarinKareleriniYazdir(List<Integer> list) {
 
@@ -77,6 +81,8 @@ public class Fp02_MethodReference {
 
     }//method son
 
+    //-----------------------------------------------------------------------------------------------------------
+
     public static void tekrarsizTekElemanlarinKupunuYazdir(List<Integer> list) {
 
         // 4 - list'in tek sayi olan elemanlarinin kuplerini tekrarsiz olarak ayni satirda aralarda bosluk birakarak yazdiran method olusturun
@@ -87,6 +93,8 @@ public class Fp02_MethodReference {
                 forEach(Utils::ayniSatirdaBosluklaYazdir);// 729 2248091
 
     }//method son
+
+    //---------------------------------------------------------------------------------------------------------
 
     public static void tekrarsizCiftElemanlarinKareToplami01(List<Integer> list) { // 1.YONTEM
 
@@ -123,6 +131,8 @@ public class Fp02_MethodReference {
 
     }//method son
 
+    //---------------------------------------------------------------------------------------------------------
+
     public static void tekrarsizCiftElemanlarinKupleriCarpimi(List<Integer> list) {
 
         // 6 - Tekrarsiz cift elemanlarin kupunun carpimini hesaplayan bir  method olusturun.
@@ -136,6 +146,8 @@ public class Fp02_MethodReference {
 
     }//method son
 
+    //--------------------------------------------------------------------------------------------------------
+
     public static void getMaxEleman(List<Integer> list) {
 
         // 7 - list elemanlari arasindan en buyuk degeri bulan method olusturun
@@ -146,6 +158,8 @@ public class Fp02_MethodReference {
 
     }//method son
 
+    //--------------------------------------------------------------------------------------------------------
+
     public static void getMinEleman(List<Integer> list) {
 
         // 8 - list elemanlari arasindan en kucuk degeri bulan method olusturun
@@ -155,6 +169,8 @@ public class Fp02_MethodReference {
         System.out.println(min); // 2
 
     }//method son
+
+    //---------------------------------------------------------------------------------------------------------
 
     public static void yedidenBuyukCiftMinDeger(List<Integer> list) {
 
@@ -167,6 +183,8 @@ public class Fp02_MethodReference {
         System.out.println(min); // 8
 
     }//method son
+
+    //---------------------------------------------------------------------------------------------------------
 
     public static void tersSiraliTekrarsizElemanlarinYarisi(List<Integer> list) {
 

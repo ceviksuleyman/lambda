@@ -54,6 +54,8 @@ public class Fp03 {
 
     }//method son
 
+    //-----------------------------------------------------------------------------------------------------------
+
     /*
     public static void elemanlariBuyukHarfIleYazdir02(List<String> list){ // 2.YONTEM
 
@@ -64,6 +66,7 @@ public class Fp03 {
     }//method son
     */
 
+    //-----------------------------------------------------------------------------------------------------------
 
     public static void uzunlugaGoreYazdir(List<String> list) {
 
@@ -77,6 +80,7 @@ public class Fp03 {
 
     }//method son
 
+    //-----------------------------------------------------------------------------------------------------------
 
     public static void uzunlugaGoreTerstenYazdir(List<String> list) {
 
@@ -91,6 +95,7 @@ public class Fp03 {
 
     }//method son
 
+    //-----------------------------------------------------------------------------------------------------------
 
     public static void sonKaraktereGoreTekrarsizYazdir(List<String> list) {
 
@@ -105,6 +110,7 @@ public class Fp03 {
 
     }//method son
 
+    //-----------------------------------------------------------------------------------------------------------
 
     public static void uzunlukVeIlkHarfeGoreSiralaYazdir(List<String> list) {
 
@@ -118,6 +124,7 @@ public class Fp03 {
 
     }//method son
 
+    //-----------------------------------------------------------------------------------------------------------
 
     /*
    public static void uzunlukBestenBuyukleriSil(List<String> list){
@@ -132,6 +139,7 @@ public class Fp03 {
    }//method son
    */
 
+    //-----------------------------------------------------------------------------------------------------------
 
      /*
     public static void ilkVeSonKaraktereGoreSil01(List<String> list) { // 1.YONTEM
@@ -147,6 +155,7 @@ public class Fp03 {
 
     }//method son
      */
+
     /*
     public static void ilkVeSonKaraktereGoreSil02(List<String> list) { // 2.YONTEM
 
@@ -158,6 +167,7 @@ public class Fp03 {
     }//method son
      */
 
+    //-----------------------------------------------------------------------------------------------------------
 
     /*
     public static void uzunlukVeVerilenKaraktereGoreSil(List<String> list) {
@@ -172,6 +182,7 @@ public class Fp03 {
     }// method son
     */
 
+    //-----------------------------------------------------------------------------------------------------------
 
     public static boolean uzunlugu12denAzMi(List<String> list) {
 
@@ -185,6 +196,7 @@ public class Fp03 {
 
     }//method son
 
+    //-----------------------------------------------------------------------------------------------------------
 
     public static boolean xIleBaslayanYokMu(List<String> list) {
 
@@ -197,6 +209,8 @@ public class Fp03 {
         // noneMatch => hicbirisi sarti saglamiyorsa true x ile baslayan yok mu diye kontrol eder
 
     }//method son
+
+    //-----------------------------------------------------------------------------------------------------------
 
     public static boolean rIleBitenVarMi(List<String> list){
 

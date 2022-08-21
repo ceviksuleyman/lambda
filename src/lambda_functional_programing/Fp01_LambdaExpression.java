@@ -92,6 +92,7 @@ public class Fp01_LambdaExpression {
         }
     } // method son
 
+    //--------------------------------------------------------------------------------------------------------
 
     public static void listElemanlariniYazdirFunctional(List<Integer> list) {
 
@@ -103,6 +104,7 @@ public class Fp01_LambdaExpression {
 
     }// method son
 
+    //--------------------------------------------------------------------------------------------------------
 
     public static void ciftElemanlariYazdirStructured(List<Integer> list) {
 
@@ -118,6 +120,7 @@ public class Fp01_LambdaExpression {
         }
     }// method son
 
+    //-----------------------------------------------------------------------------------------------------------
 
     public static void ciftElemanlariYazdirFunctional(List<Integer> list) {
 
@@ -129,6 +132,8 @@ public class Fp01_LambdaExpression {
 
 
     }//method son
+
+    //------------------------------------------------------------------------------------------------------------
 
     public static void tekElemanlarinKaresiniYazdirFunctional(List<Integer> list) {
 
@@ -144,6 +149,8 @@ public class Fp01_LambdaExpression {
 
     }//method son
 
+    //-----------------------------------------------------------------------------------------------------------
+
     public static void tekrarsizTekElemanlarinKupunuYazdir(List<Integer> list) {
 
         // 6 - tek list elemanlarinin kuplerini tekrarsiz olarak ayni satirda aralarinda bosluk birakarak yazdiran bir method olusturun.
@@ -155,6 +162,8 @@ public class Fp01_LambdaExpression {
                 forEach(t -> System.out.print(t + " ")); // 729 2248091
 
     }//method son
+
+    //-----------------------------------------------------------------------------------------------------------
 
     public static void tekrarsizCiftElemanlarinKareToplami(List<Integer> list) {
 
@@ -170,6 +179,8 @@ public class Fp01_LambdaExpression {
 
     }//method son
 
+    //-----------------------------------------------------------------------------------------------------------
+
     public static void tekrarsizCiftElemanlarinKupununCarpimi(List<Integer> list) {
 
         // 8 - Tekrarsiz cift elemanlarin kupunun carpimini hesaplayan bir method olusturun
@@ -183,6 +194,8 @@ public class Fp01_LambdaExpression {
         System.out.println(carpim); // 4096000
 
     }//method son
+
+    //-----------------------------------------------------------------------------------------------------------
 
     public static void getMaxEleman01(List<Integer> list) { // 1.YONTEM
 
@@ -203,6 +216,8 @@ public class Fp01_LambdaExpression {
         System.out.print(max); // 131
 
     }//method son
+
+    //-----------------------------------------------------------------------------------------------------------
 
     public static void getMinEleman01(List<Integer> list) { // 1.YONTEM
 
@@ -229,6 +244,8 @@ public class Fp01_LambdaExpression {
 
     }//method son
 
+    //-----------------------------------------------------------------------------------------------------------
+
     public static void getYedidenBuyukCiftMin01(List<Integer> list) { // 1.YONTEM
 
         // 10 - list elemanlari arasinda 7'den buyuk cift en kucuk degeri bulan method olusturun.
@@ -242,7 +259,6 @@ public class Fp01_LambdaExpression {
         System.out.print(min); // 8
 
     }//method son
-
     public static void getYedidenBuyukCiftMin02(List<Integer> list) { // 2.YONTEM
 
         System.out.print("2.yontem 7'den buyuk cift min sayi : ");
@@ -254,7 +270,6 @@ public class Fp01_LambdaExpression {
         System.out.print(min); // 8
 
     }//method son
-
     public static void getYedidenBuyukCiftMin03(List<Integer> list) { // 3.YONTEM
 
         System.out.print("3.yontem 7'den buyuk cift min sayi : ");
@@ -266,6 +281,8 @@ public class Fp01_LambdaExpression {
         System.out.print(min); // 8
 
     }//method son
+
+    //-----------------------------------------------------------------------------------------------------------
 
     public static void getTersSiralamaIleTekrarsizElemanlarinYarisi(List<Integer> list) {
 
