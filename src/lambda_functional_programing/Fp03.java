@@ -42,9 +42,9 @@ public class Fp03 {
 
     }
 
-
-    // 1 - list'in tum elemanlarini buyuk harf ile yazdiran bir method olusturun
     public static void elemanlariBuyukHarfIleYazdir01(List<String> list) { // 1.YONTEM
+
+        // 1 - list'in tum elemanlarini buyuk harf ile yazdiran bir method olusturun
 
         System.out.println(list.toString().toUpperCase());//[ALİ, ALİ, MARK, AMANDA, CHRİSTOPHER, JACKSON, MARİANO, ALBERTO, TUCKER, BENJAMİN]
 
@@ -53,6 +53,7 @@ public class Fp03 {
         // output : ALİ ALİ MARK AMANDA CHRİSTOPHER JACKSON MARİANO ALBERTO TUCKER BENJAMİN
 
     }//method son
+
     /*
     public static void elemanlariBuyukHarfIleYazdir02(List<String> list){ // 2.YONTEM
 
@@ -64,8 +65,9 @@ public class Fp03 {
     */
 
 
-    // 2 - Elemanlari uzunluklarina gore siralayip yazdiran bir method olusturun
     public static void uzunlugaGoreYazdir(List<String> list) {
+
+        // 2 - Elemanlari uzunluklarina gore siralayip yazdiran bir method olusturun
 
         list.stream().
                 sorted(Comparator.comparing(String::length)). //Comparator.comparing() => siralama kosulunu belirtmek icin kullanilir
@@ -76,8 +78,9 @@ public class Fp03 {
     }//method son
 
 
-    // 3 - Elemanlari uzunluklarina gore ters siralayip yazdiran bir method olusturun
     public static void uzunlugaGoreTerstenYazdir(List<String> list) {
+
+        // 3 - Elemanlari uzunluklarina gore ters siralayip yazdiran bir method olusturun
 
         list.stream().
                 sorted(Comparator.comparing(String::length).
@@ -89,8 +92,9 @@ public class Fp03 {
     }//method son
 
 
-    // 4 - Elemanlari son karakterlerine gore siralayip tekrarsiz yazdiran bir method olusturun
     public static void sonKaraktereGoreTekrarsizYazdir(List<String> list) {
+
+        // 4 - Elemanlari son karakterlerine gore siralayip tekrarsiz yazdiran bir method olusturun
 
         //sorted(Comparator.comparing(t -> t.charAt(t.length()-1)))
         list.stream().distinct().
@@ -102,8 +106,9 @@ public class Fp03 {
     }//method son
 
 
-    // 5 - Elemanlari once uzunluk ve sonra ilk karakterine gore siralayip yazdiran method olusturun
     public static void uzunlukVeIlkHarfeGoreSiralaYazdir(List<String> list) {
+
+        // 5 - Elemanlari once uzunluk ve sonra ilk karakterine gore siralayip yazdiran method olusturun
 
         list.stream().sorted(Comparator.comparing(String::length).// uzunluk kontrol'den
                 thenComparing(Utils::ilkKarakteriAl)). // sonra ilk harf kontrol
@@ -115,8 +120,9 @@ public class Fp03 {
 
 
     /*
-    // 6 - Uzunlugu 5'ten buyuk olan elemanlari silen bir method olusturun
    public static void uzunlukBestenBuyukleriSil(List<String> list){
+
+     // 6 - Uzunlugu 5'ten buyuk olan elemanlari silen bir method olusturun
 
        list.removeIf(t-> t.length() > 5); // uzunluk 5'ten buyuk ise sil
 
@@ -128,8 +134,9 @@ public class Fp03 {
 
 
      /*
-     // 7 - ‘A’, ‘a’ ile baslayan ya da ‘N’, ‘n’ ile biten elemanlari silen bir method olusturun.
     public static void ilkVeSonKaraktereGoreSil01(List<String> list) { // 1.YONTEM
+
+       // 7 - ‘A’, ‘a’ ile baslayan ya da ‘N’, ‘n’ ile biten elemanlari silen bir method olusturun.
 
         list.removeIf(t -> t.charAt(0) == 'a'
                 || t.charAt(0) == 'A'
@@ -153,8 +160,9 @@ public class Fp03 {
 
 
     /*
-    // 8 - uzunlugu 8 ile 10 arasinda olan ya da "o" ile biten elemanlari silen bir method olusturun
     public static void uzunlukVeVerilenKaraktereGoreSil(List<String> list) {
+
+      // 8 - uzunlugu 8 ile 10 arasinda olan ya da "o" ile biten elemanlari silen bir method olusturun
 
         list.removeIf(t -> t.length() > 7 && t.length() < 11 || t.endsWith("o"));
         // remove : Benjamin,Alberto,Mariano
@@ -165,8 +173,9 @@ public class Fp03 {
     */
 
 
-    // 9 - Tum elemanlarin uzunluklarinin 12'den az olup olmadigini kontrol eden method
     public static boolean uzunlugu12denAzMi(List<String> list) {
+
+        // 9 - Tum elemanlarin uzunluklarinin 12'den az olup olmadigini kontrol eden method
 
         System.out.print("elemanlarin Uzunluklari 12 den az mi : ");
 
@@ -177,8 +186,9 @@ public class Fp03 {
     }//method son
 
 
-    // 10 - Hicbir elemanin "X" ile baslamadigini kontrol eden method olusturun
     public static boolean xIleBaslayanYokMu(List<String> list) {
+
+        // 10 - Hicbir elemanin "X" ile baslamadigini kontrol eden method olusturun
 
         System.out.print("x ile baslayan eleman yok mu : ");
 
@@ -188,9 +198,9 @@ public class Fp03 {
 
     }//method son
 
-
-    // 11 - Herhangi bir elemanin "r" ile bitip bitmedigini kontrol eden method olusturun
     public static boolean rIleBitenVarMi(List<String> list){
+
+        // 11 - Herhangi bir elemanin "r" ile bitip bitmedigini kontrol eden method olusturun
 
         System.out.print("r ile biten eleman varmi : ");
 
