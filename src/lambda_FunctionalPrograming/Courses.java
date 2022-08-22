@@ -1,6 +1,6 @@
-package lambda_functional_programing;
+package lambda_FunctionalPrograming;
 
-public class Courses { // POJO => Play old java object
+public class Courses { // POJO => Plain old java object
 
     private String Season;
     private String courseName;

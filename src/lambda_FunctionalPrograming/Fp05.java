@@ -1,4 +1,4 @@
-package lambda_functional_programing;
+package lambda_FunctionalPrograming;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -27,8 +27,6 @@ public class Fp05 {
         System.out.println(ortalamaPuanGoreSiralaVeIlkVerilenleriAtla(coursesList, 2));
 
     }
-
-
 
     public static boolean ortalamaPuanlarVerilenSayidanBuyukMu(List<Courses> list, double x) {
 

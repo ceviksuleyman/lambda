@@ -1,4 +1,4 @@
-package lambda_functional_programing;
+package lambda_FunctionalPrograming;
 
 public class Utils {
 
