@@ -1,4 +1,4 @@
-package lambda_FunctionalPrograming;
+package lambda_Functional_Programing;
 
 public class Courses { // POJO => Plain old java object
 
