@@ -165,8 +165,8 @@ public class Lambda01 {
 
         // Task : List elelmanlarinin "W" ile baslamasını kontrol ediniz.
 
-        System.out.println(list.stream().anyMatch(t -> t.toLowerCase().startsWith("w")) ?
-                "w ile baslayan eleman var" : "w ile baslayan eleman yok");
+        System.out.println(list.stream().noneMatch(t -> t.toLowerCase().startsWith("w")) ?
+                "w ile baslayan eleman yok" : "w ile baslayan eleman var");
 
     }//method son
 
