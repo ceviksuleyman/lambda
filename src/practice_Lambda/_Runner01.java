@@ -12,7 +12,26 @@ public class _Runner01 extends Lambda01{
         System.out.println("------------------");
         listCiftElemanlarinCarpimi(numbers);
         System.out.println("------------------");
-        System.out.println("------------------");
+        teklerinKaresiBuyuktenKucuge(numbers);
+        System.out.println("\n------------------");
+        alfabetikBuyukHarfTekrarsiz(menu);
+        System.out.println("\n---------------------");
+        sonHarfeGoreTersSira(menu);
+        System.out.println("\n-------------------");
+        karakterSayisi7denBuyuk(menu);
+        System.out.println("-------------------");
+        basHarfiWIleBaslayan(menu);
+        System.out.println("-------------------");
+        xIleBitenEleman(menu);
+        System.out.println("-------------------");
+        karakterSayisiEnFazlaEleman(menu);
+        System.out.println("-------------------");
+        sonHarfeGoreSiralaIlkHaricElmanlariYaz(menu);
+
+
+
+
+
 
     }
 }
