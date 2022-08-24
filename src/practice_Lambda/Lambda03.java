@@ -8,6 +8,30 @@ import java.util.stream.IntStream;
 
 public class Lambda03 {
 
+    public static void main(String[] args) {
+
+        System.out.println(mdArrayNaturalSirala(arr));
+        System.out.println(toplaAmele(5));
+        System.out.println(toplaCincix(5));
+        System.out.println(toplaCift(10));
+
+    }
+
+    static String[][] arr = {{"Ali", "Veli", "Ayse"}, {"Hasan", "Can"}, {"Suzan"}};
+    public static List<String> mdArrayNaturalSirala(String[][] arr){
+         /*
+         TASK : 2 Boyutlu bir Multidimensional array i input kabul edip, arraydeki tüm elemanları bir listeye
+         kopyalayan ve harf sırasına göre yazdıran bir METHOD yazınız.
+         Eg : Input : {{Ali,Veli,Ayse},{Hasan,Can},{Suzan}}
+         Output:[Ali, Ayse, Can, Hasan, Suzan, Veli]
+         */
+
+        List<String> list = Arrays.stream(arr).flatMap(Arrays::stream).sorted().collect(Collectors.toList());
+
+        return list;
+
+    }// method son
+
     //TASK 01: Structured Programming ve Functional Programming ile 1'den x'e kadar tamsayilari toplayan bir program create ediniz.
     public static int toplaAmele(int i) { // Structured programming
 
@@ -69,29 +93,5 @@ public class Lambda03 {
     public static double xKuvveti(int sayi, int x) {
 
         return 0;
-    }
-
-    static String[][] arr = {{"Ali", "Veli", "Ayse"}, {"Hasan", "Can"}, {"Suzan"}};
-    public static List<String> mdArrayNaturalSirala(String[][] arr){
-         /*
-         TASK : 2 Boyutlu bir Multidimensional array i input kabul edip, arraydeki tüm elemanları bir listeye
-         kopyalayan ve harf sırasına göre yazdıran bir METHOD yazınız.
-         Eg : Input : {{Ali,Veli,Ayse},{Hasan,Can},{Suzan}}
-         Output:[Ali, Ayse, Can, Hasan, Suzan, Veli]
-         */
-
-        List<String> list = Arrays.stream(arr).flatMap(Arrays::stream).sorted().collect(Collectors.toList());
-
-        return list;
-    }// method son
-
-    public static void main(String[] args) {
-
-        System.out.println(mdArrayNaturalSirala(arr));
-        System.out.println(toplaAmele(5));
-        System.out.println(toplaCincix(5));
-        System.out.println(toplaCift(10));
-
-
     }
 }
