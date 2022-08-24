@@ -1,6 +1,5 @@
 package practice_Lambda;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,7 +17,8 @@ public class Lambda03 {
     }
 
     static String[][] arr = {{"Ali", "Veli", "Ayse"}, {"Hasan", "Can"}, {"Suzan"}};
-    public static List<String> mdArrayNaturalSirala(String[][] arr){
+
+    public static List<String> mdArrayNaturalSirala(String[][] arr) {
          /*
          TASK : 2 Boyutlu bir Multidimensional array i input kabul edip, arraydeki tüm elemanları bir listeye
          kopyalayan ve harf sırasına göre yazdıran bir METHOD yazınız.
@@ -42,9 +42,10 @@ public class Lambda03 {
         return sum;
 
     }//method son
+
     public static int toplaCincix(int x) { // Functional Programming
 
-        return IntStream.rangeClosed(1, x).reduce(Math::addExact).getAsInt();
+        return IntStream.rangeClosed(1, x).sum();
 
     }//method son
 
@@ -53,7 +54,7 @@ public class Lambda03 {
 
         //TASK 02 --> 1'den x'e kadar cift tamsayilari toplayan bir program create ediniz.
 
-        return IntStream.rangeClosed(1, x).filter(t-> t % 2== 0).sum();
+        return IntStream.rangeClosed(1, x).filter(t -> t % 2 == 0).sum();
 
     }//method son
 
