@@ -1,5 +1,10 @@
 package practice_Lambda;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Lambda03 {
 
     //TASK 01 --> Structured Programming ve Functional Programming ile 1'den x'e kadar
@@ -7,7 +12,11 @@ public class Lambda03 {
     //Structured(AMELE) Programming
     public static int toplaAmele(int i) {
 
-        return 0;
+        int sum = 0;
+        for (int j = 1; j <= i; j++) {
+            sum += j;
+        }
+        return sum;
     }
 
     //TODO Functional(cincix Programming)
@@ -59,14 +68,25 @@ public class Lambda03 {
         return 0;
     }
 
+    static String[][] arr = {{"Ali", "Veli", "Ayse"}, {"Hasan", "Can"}, {"Suzan"}};
+    public static List<String> mdArrayNaturalSirala(String[][] arr){
+         /*
+         TASK : 2 Boyutlu bir Multidimensional array i input kabul edip, arraydeki tüm elemanları bir listeye
+         kopyalayan ve harf sırasına göre yazdıran bir METHOD yazınız.
+         Eg : Input : {{Ali,Veli,Ayse},{Hasan,Can},{Suzan}}
+         Output:[Ali, Ayse, Can, Hasan, Suzan, Veli]
+         */
 
-    /*
-    TASK :
-    2 Boyutlu bir Multidimensional array i input kabul edip, arraydeki tüm elemanları bir
-    listeye kopyalayan ve harf sırasına göre yazdıran bir METHOD yazınız.
-    Eg : Input : {{Ali,Veli,Ayse},{Hasan,Can},{Suzan}}
-    Output:[Ali, Ayse, Can, Hasan, Suzan, Veli]
-    */
-    String[][] arr = {{"Ali", "Veli", "Ayse"}, {"Hasan", "Can"}, {"Suzan"}};
+        List<String> list = Arrays.stream(arr).flatMap(Arrays::stream).sorted().collect(Collectors.toList());
 
+        return list;
+    }// method son
+
+    public static void main(String[] args) {
+
+        System.out.println(mdArrayNaturalSirala(arr));
+        System.out.println(toplaAmele(5));
+
+
+    }
 }
