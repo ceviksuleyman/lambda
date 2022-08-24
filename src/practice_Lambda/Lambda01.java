@@ -115,7 +115,6 @@ public class Lambda01 {
 
 
 
-
     }//method son
 
     public static void sonHarfeGoreTersSira(List<String> list) {
@@ -132,7 +131,6 @@ public class Lambda01 {
 
         // Task: listin elemanlarinin cift sayili karakterlerinin karelerini hesaplayan ve karelerini tekrarsiz
         // buyukten kucuge dogru sirali print ediniz.
-
 
 
 
