@@ -13,6 +13,8 @@ public class Lambda03 {
         System.out.println(toplaAmele(5));
         System.out.println(toplaCincix(5));
         System.out.println(toplaCift(10));
+        System.out.println(xKuvveti(2, 3));
+        System.out.println(istenenSayiFactorial(5));
 
     }
 
@@ -87,12 +89,16 @@ public class Lambda03 {
     //TASK 07 --> Istenilen bir sayinin faktoriyelini hesaplayan programi  create ediniz.
     public static int istenenSayiFactorial(int x) {
 
-        return 0;
+
+        return IntStream.rangeClosed(1,x).reduce(Math::multiplyExact).stream().sum();
+
     }
 
     //TASK 08 --> Istenilen bir sayinin  x. kuvvetini ekrana yazdiran programi  create ediniz.
     public static double xKuvveti(int sayi, int x) {
 
-        return 0;
+        double sonuc = Math.pow(sayi,x);
+
+        return sonuc;
     }
 }
