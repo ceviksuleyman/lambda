@@ -1,9 +1,13 @@
 package practice_Lambda;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Lambda03 {
 
@@ -15,12 +19,12 @@ public class Lambda03 {
         System.out.println(toplaCift(10));
         System.out.println(xKuvveti(2, 3));
         System.out.println(istenenSayiFactorial(5));
-
     }
 
     static String[][] arr = {{"Ali", "Veli", "Ayse"}, {"Hasan", "Can"}, {"Suzan"}};
 
-    public static List<String> mdArrayNaturalSirala(String[][] arr) {
+
+    public static List<String> mdArrayNaturalSirala(String [][] arr) {
          /*
          TASK : 2 Boyutlu bir Multidimensional array i input kabul edip, arraydeki tüm elemanları bir listeye
          kopyalayan ve harf sırasına göre yazdıran bir METHOD yazınız.
@@ -90,14 +94,14 @@ public class Lambda03 {
     public static int istenenSayiFactorial(int x) {
 
 
-        return IntStream.rangeClosed(1,x).reduce(Math::multiplyExact).stream().sum();
+        return IntStream.rangeClosed(1, x).reduce(Math::multiplyExact).stream().sum();
 
     }
 
     //TASK 08 --> Istenilen bir sayinin  x. kuvvetini ekrana yazdiran programi  create ediniz.
     public static double xKuvveti(int sayi, int x) {
 
-        double sonuc = Math.pow(sayi,x);
+        double sonuc = Math.pow(sayi, x);
 
         return sonuc;
     }

@@ -46,7 +46,7 @@ public class Lambda02_DosyaOkuma {
         // 2.yontem
         Files.lines(Path.of("src/practice_Lambda/siirler.txt")).forEach(Methods::yazdirprintln);
 
-        // ******************************************************************************************************
+        // ********************************************************************************************************
 
         System.out.println("\nTASK 2  -> siirler.txt dosyasindaki ilk satiri buyuk harflerle yazdirin  ->");
         // 1. Yontem
@@ -54,14 +54,14 @@ public class Lambda02_DosyaOkuma {
         // 2. Yontem
         System.out.println(Files.lines(siir).map(String::toUpperCase).findFirst().get());
 
-        // ******************************************************************************************************
+        // ********************************************************************************************************
 
         System.out.println("\nTASK 3 -> siirler.txt dosyasinda 'hatir' kelimesinin kac satirda gectiginiz yazdiriniz ->");
 
         // Kac tane degil kac satirda oldugunu verir.
         System.out.println(Files.lines(siir).map(String::toLowerCase).filter(t -> t.contains("hatir")).count());
 
-        // ******************************************************************************************************
+        // ********************************************************************************************************
 
         System.out.println("\nTASK 4 -> siirler.txt dosyasindaki ayni kelimeleri cikartarak (Unique)yazdiriniz. ->");
         //1.yontem
@@ -75,7 +75,7 @@ public class Lambda02_DosyaOkuma {
                 flatMap(Arrays::stream).
                 collect(Collectors.toSet())); // setler unique
 
-        // ******************************************************************************************************
+        // *********************************************************************************************************
 
         System.out.println("\nTASK 5 -> siirler.txt dosyasindaki tum kelimeleri natural order  yazdiriniz. ->");
 
@@ -84,7 +84,7 @@ public class Lambda02_DosyaOkuma {
                 sorted().  // natural order'a gore siralar
                 forEach(Methods::yazdirprint);
 
-        // ******************************************************************************************************
+        // *********************************************************************************************************
 
         System.out.println("\n\nTASK 6 -> siirler.txt dosyasinda 'gonlum' kelimesinin kac kere gectigini  yazdiriniz. ->");
 
@@ -93,7 +93,7 @@ public class Lambda02_DosyaOkuma {
                 flatMap(Arrays::stream).
                 filter(t -> t.contains("gonlum")).count());
 
-        // ******************************************************************************************************
+        // *********************************************************************************************************
 
         System.out.println("\nTASK 7 -> siirler.txt dosyasinda 'a' harfi gecen kelimelerin sayisini ekrana yazdiran programi yazdiriniz. ->");
 
@@ -102,7 +102,7 @@ public class Lambda02_DosyaOkuma {
                 flatMap(Arrays::stream).
                 filter(t -> t.contains("a")).count());
 
-        // ******************************************************************************************************
+        // **********************************************************************************************************
 
         System.out.println("\nTASK 8 -> siirler.txt dosyasinda 'a' harfi gecen kelimeleri  yazdiriniz. ->");
 
@@ -112,7 +112,7 @@ public class Lambda02_DosyaOkuma {
                 filter(t -> t.contains("a")).collect(Collectors.toList()).
                 forEach(Methods::yazdirprint);
 
-        // ******************************************************************************************************
+        // **********************************************************************************************************
 
         System.out.println("\n\nTASK 9 -> siirler.txt dosyasinda kac /farklı harf kullanildigini  yazdiriniz. ->");
 
@@ -120,7 +120,7 @@ public class Lambda02_DosyaOkuma {
                 map(t -> t.replaceAll("\\W", "").replaceAll("\\d", "").split("")).
                 flatMap(Arrays::stream).distinct().count());
 
-        // ******************************************************************************************************
+        // **********************************************************************************************************
 
         System.out.println("\nTASK 10 -> siirler.txt dosyasinda kac farkli kelime kullanildigini  yazdiriniz. ->");
 
