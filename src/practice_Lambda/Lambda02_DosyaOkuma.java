@@ -130,5 +130,16 @@ public class Lambda02_DosyaOkuma {
                 distinct().
                 count());
 
+        // **********************************************************************************************************
+
+        System.out.println("\nTASK 11 -> siirler.txt dosyasindaki  farkli kelimeleri print ediniz. ->");
+
+        Files.lines(siir).
+                map(t -> t.toLowerCase().split(" ")).
+                flatMap(Arrays::stream).
+                distinct().
+                collect(Collectors.toList()).
+                forEach(Methods::yazdirprint);
+
     }
 }
