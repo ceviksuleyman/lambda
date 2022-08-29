@@ -49,6 +49,7 @@ public class Lambda03 {
 
     //***************************************************************************************************
 
+
     public static void listtekSayilarinKaresiToplami(List<Integer> list) {
 
       /*
@@ -66,15 +67,16 @@ public class Lambda03 {
 
     //***************************************************************************************************
 
+
     //TASK 01: Structured Programming ve Functional Programming ile 1'den x'e kadar tamsayilari toplayan bir program create ediniz.
     public static int toplaAmele(int i) { // Structured programming
-
 
         System.out.print("TASK 01 => Structured Toplama : ");
         int sum = 0;
         for (int j = 1; j <= i; j++) {
             sum += j;
         }
+
         return sum;
 
     }//method son
@@ -82,6 +84,7 @@ public class Lambda03 {
     public static int toplaCincix(int x) { // Functional Programming
 
         System.out.print("TASK 01 => Functional Toplama : ");
+
         return IntStream.rangeClosed(1, x).sum();
 
     }//method son
@@ -137,8 +140,8 @@ public class Lambda03 {
 
     }
 
-
     //***************************************************************************************************
+
 
     //TASK 06 --> Istenilen bir sayinin ilk x kuvvetini ekrana yazdiran programi  create ediniz.
     public static void isteneSayiIlkXKuvvetPrint(int istenenSayi, int x) {
@@ -151,8 +154,8 @@ public class Lambda03 {
 
     }// method son
 
-
     //***************************************************************************************************
+
 
     //TASK 07 --> Istenilen bir sayinin faktoriyelini hesaplayan programi  create ediniz.
     public static int istenenSayiFactorial(int x) {
@@ -166,8 +169,8 @@ public class Lambda03 {
 
     }//method son
 
-
     //***************************************************************************************************
+
 
     //TASK 08 --> Istenilen bir sayinin  x. kuvvetini ekrana yazdiran programi  create ediniz.
     public static double xKuvveti(int sayi, int x) {
@@ -176,6 +179,7 @@ public class Lambda03 {
         double sonuc = Math.pow(sayi, x);
 
         return sonuc;
+
     }// method son
 
 }
