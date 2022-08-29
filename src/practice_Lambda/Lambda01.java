@@ -12,15 +12,14 @@ public class Lambda01 {
 
     static List<String> menu = new ArrayList<>(Arrays.asList("kusleme", "kusleme", "adana", "trilice", "havucdilim", "buryan", "kokorec", "kuzutandir", "guvec"));
 
+
+
+    // TASK-1 : Input olarak verilen listteki isimlerden icinde 'a' harfi bulunanlari silen bir code create ediniz.
+    // INPUT : list1={"Ali","Veli","Ayse","Fatma","Omer"}
+    // OUTPUT : [Veli,Omer]
     public static void aHarfiIcerenleriSil(ArrayList<String> list) {
 
-        /* TASK :
-         * Input olarak verilen listteki isimlerden
-         * icinde 'a' harfi bulunanlari silen bir code create ediniz.
-         * INPUT : list1={"Ali","Veli","Ayse","Fatma","Omer"}
-         * OUTPUT : [Veli,Omer]
-         */
-
+        System.out.print("TASK-1 =>  ");
         // 1. Yontem
         System.out.println(list.stream(). // akis
                 map(String::toLowerCase).// hepsi kucuk harf yapildi
@@ -30,17 +29,20 @@ public class Lambda01 {
         // 2.yontem
         //System.out.println(list.stream().filter(t -> !t.contains("a") && !t.contains("A")).collect(Collectors.toList()));
 
-
         // 3.yontem
         //list.removeIf(t -> t.contains("a") || t.contains("A"));
         //System.out.println(list);
 
     }// method son
 
+
+    //*****************************************************************************************************
+
+
+    //Task 2 : List'deki en buyuk elemani bulun
     public static void getMaxEleman(List<Integer> list) {
 
-        //Task : List'deki en buyuk elemani bulun
-
+        System.out.print("TASK-2 =>  ");
         //1.yontem
         Optional<Integer> max = list.stream().reduce(Math::max);
         System.out.println(max);
@@ -51,10 +53,14 @@ public class Lambda01 {
 
     }// method son
 
+
+    //*****************************************************************************************************
+
+
+    // Task-3 : listteki elemanlarin toplamini yazdirin
     public static void listElemanlarinToplami(List<Integer> list) {
 
-        // Task : listteki elemanlarin toplamini yazdirin
-
+        System.out.print("TASK-3 =>  ");
         //1.yontem
         System.out.println(list.stream().reduce(0, (t, u) -> t + u));
 
@@ -75,10 +81,14 @@ public class Lambda01 {
 
     }//method son
 
+
+    //*****************************************************************************************************
+
+
+    // Task-4 : List'teki cift elemanlarin carpimini  yazdiriniz.
     public static void listCiftElemanlarinCarpimi(List<Integer> list) {
 
-        // Task : List'teki cift elemanlarin carpimini  yazdiriniz.
-
+        System.out.print("TASK-4 =>  ");
         //1.yontem method reference
         Integer carpim = list.stream().filter(Methods::getCiftEleman).reduce(Math::multiplyExact).get();
         System.out.println(carpim);
@@ -88,10 +98,14 @@ public class Lambda01 {
 
     }//method son
 
+
+    //*****************************************************************************************************
+
+
+    // Task-5 : tek sayilarin karesini buyukten kucuge yazdiran method.
     public static void teklerinKaresiBuyuktenKucuge(List<Integer> list) {
 
-        // Task : tek sayilarin karesini buyukten kucuge yazdiran method.
-
+        System.out.print("TASK-5 =>  ");
         list.stream().
                 filter(t -> t % 2 != 0). // tek olan sayilari al
                 map(t -> t * t). // tek sayilarin karesini al
@@ -100,46 +114,60 @@ public class Lambda01 {
 
     }//method son
 
+
+    //*****************************************************************************************************
+
+
+    // Task-6 : list elemanlarini buyuk harf ve tekrarsiz print ediniz.
     public static void alfabetikBuyukHarfTekrarsiz(List<String> list) {
 
-        // Task : list elemanlarini buyuk harf ve tekrarsiz print ediniz.
-
+        System.out.print("TASK-6 =>  ");
         list.stream().distinct().map(String::toUpperCase).forEach(Methods::yazdirprint);
 
     }//method son
 
+
+    //*****************************************************************************************************
+
     public static void strKarakterSayisiYazdir(List<String> list) { // TODO
 
-        // Task : list elemanlarinin character sayisini sirali olarak tekrarsiz yazdirin.
-
-
-
+        // Task-7 : list elemanlarinin character sayisini sirali olarak tekrarsiz yazdirin.
 
     }//method son
 
+
+    //*****************************************************************************************************
+
+
+    // Task-8 : List elemanlarinin son harfine gore ters sirali print yapiniz.
     public static void sonHarfeGoreTersSira(List<String> list) {
 
-        // Task : List elemanlarinin son harfine gore ters sirali print yapiniz.
-
+        System.out.print("TASK-8 =>  ");
         list.stream().
                 sorted(Comparator.comparing(t -> t.toString().charAt(t.toString().length() - 1)).reversed()).
                 forEach(Methods::yazdirprint);
 
     }//method son
 
+
+    //*****************************************************************************************************
+
     public static void karakterCiftKareBuyuktenKucuge(List<String> list) { // TODO
 
-        // Task: listin elemanlarinin cift sayili karakterlerinin karelerini hesaplayan ve karelerini tekrarsiz
+        // Task-9 : listin elemanlarinin cift sayili karakterlerinin karelerini hesaplayan ve karelerini tekrarsiz
         // buyukten kucuge dogru sirali print ediniz.
-
 
 
     }//method son
 
+
+    //*****************************************************************************************************
+
+
+    // Task-10 : list elemanlarinin karakter sayisini 7 ve 7 den buyuk olma durumunu kontrol ediniz.
     public static void karakterSayisi7denBuyuk(List<String> list) {
 
-        // Task : list elemanlarinin karakter sayisini 7 ve 7 den buyuk olma durumunu kontrol ediniz.
-
+        System.out.print("TASK-10 =>  ");
         // 1.yontem
         boolean kontrol = list.stream().allMatch(t -> t.length() < 8);
         if (kontrol) {
@@ -155,44 +183,59 @@ public class Lambda01 {
 
     }//method son
 
+    //*****************************************************************************************************
+
     // anyMatch() --> en az bir eleman sarti saglarsa true aksi durumda false return eder
     // allMatch() --> tum  elemanlar sarti saglarsa true en az bir eleman sarti saglamazsa false return eder.
     // noneMatch() --> hic bir sarti SAGLAMAZSA true en az bir eleman sarti SAGLARSA false return eder.
 
+
+    //*****************************************************************************************************
+
+    // Task-11 : List elelmanlarinin "W" ile baslamasını kontrol ediniz.
     public static void basHarfiWIleBaslayan(List<String> list) {
 
-        // Task : List elelmanlarinin "W" ile baslamasını kontrol ediniz.
-
+        System.out.print("TASK-11 =>  ");
         System.out.println(list.stream().noneMatch(t -> t.toLowerCase().startsWith("w")) ?
                 "w ile baslayan eleman yok" : "w ile baslayan eleman var");
 
     }//method son
 
+
+    //*****************************************************************************************************
+
+
+    // Task-12 : List elelmanlarinin "x" ile biten en az bir elemani kontrol ediniz.
     public static void xIleBitenEleman(List<String> list) {
 
-        // Task : List elelmanlarinin "x" ile biten en az bir elemani kontrol ediniz.
-
+        System.out.print("TASK-12 =>  ");
         System.out.println(list.stream().anyMatch(t -> t.toLowerCase().endsWith("x")) ?
                 "x ile biten eleman var" : "x ile biten eleman yok");
 
     }//method son
 
+
+    //*****************************************************************************************************
+
+
+    // Task-13 : Karakter sayisi en buyuk elemani yazdiriniz.
     public static void karakterSayisiEnFazlaEleman(List<String> list) {
 
         // limit(1) => Sınırlandırma demek. Bu akışın elemanlarından oluşan, uzunluğu maxSize'dan uzun olmayacak
         // şekilde kesilmiş bir akış return eder. Stream return eder.
 
-        // Task : Karakter sayisi en buyuk elemani yazdiriniz.
-
+        System.out.print("TASK-13 =>  ");
         Stream<String> maxEleman =  // limit kullandigimiz icin maxEleman objesine atadik
                 list.stream().
                         sorted(Comparator.comparing(t -> t.toString().length()).reversed()).//lenghte gore sartladi ve listi terse cevirdi
                         limit(1); //ilk elemani aldi
-                       //.forEach(Methods::yazdir);
+        //.forEach(Methods::yazdir);
 
         System.out.println(Arrays.toString(maxEleman.toArray()));//stream'a array'a cevirip yazdir
 
     }//method son
+
+    //*****************************************************************************************************
 
      /*
     TRİCK : Stream'ler ekrana direk yazdırılamaz. Stream'i toArray() ile Array'e çeviririz.
@@ -200,10 +243,13 @@ public class Lambda01 {
     Ör; System.out.println(Arrays.toString(***.toArray())); veya System.out.println(Arrays.asList(***.toArray())); kullanılabilir.
     */
 
+
+    //*****************************************************************************************************
+
+    // Task-14 : list elemanlarini son harfine gore siralayip ilk eleman haric print ediniz.
     public static void sonHarfeGoreSiralaIlkHaricElmanlariYaz(List<String> list) {
 
-        // Task : list elemanlarini son harfine gore siralayip ilk eleman haric print ediniz.
-
+        System.out.print("TASK-14 =>  ");
         list.stream().
                 sorted(Comparator.comparing(t -> t.charAt(t.length() - 1))).forEach(Methods::yazdirprint);
 
@@ -216,6 +262,5 @@ public class Lambda01 {
         // skip => n kadar atla sonrasini yazdir.
 
     }//method son
-
 
 }
