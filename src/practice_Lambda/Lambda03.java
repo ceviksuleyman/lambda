@@ -126,8 +126,7 @@ public class Lambda03 {
         System.out.print("TASK 04 => ilk " + x + " TekSayiyiTopla : ");
         return IntStream.
                 iterate(1, t -> t + 2). // 1 den sonsuza kadar elemanlari 2 artirarak akisa alir.
-                        limit(x).
-                sum();
+                        limit(x).sum();
 
     }//method son
 
@@ -156,6 +155,7 @@ public class Lambda03 {
 
     }// method son
 
+
     //***************************************************************************************************
 
 
@@ -171,6 +171,7 @@ public class Lambda03 {
 
     }//method son
 
+
     //***************************************************************************************************
 
 
@@ -178,9 +179,12 @@ public class Lambda03 {
     public static double xKuvveti(int sayi, int x) {
 
         System.out.print("TASK 08 => " + sayi + " in " + x + " kuvveti : ");
-        double sonuc = Math.pow(sayi, x);
 
-        return sonuc;
+        //1.yontem
+        //return Math.pow(sayi, x);
+
+        //2.yontem
+        return IntStream.iterate(sayi, t -> t * sayi).limit(x).reduce(0, (t, u) -> u);
 
     }// method son
 
