@@ -68,7 +68,9 @@ public class Lambda03 {
     //***************************************************************************************************
 
 
-    //TASK 01: Structured Programming ve Functional Programming ile 1'den x'e kadar tamsayilari toplayan bir program create ediniz.
+    //TASK 01: Structured Programming ve Functional Programming ile 1'den x'e kadar tamsayilari toplayan
+    // bir program create ediniz.
+
     public static int toplaAmele(int i) { // Structured programming
 
         System.out.print("TASK 01 => Structured Toplama : ");
@@ -76,7 +78,6 @@ public class Lambda03 {
         for (int j = 1; j <= i; j++) {
             sum += j;
         }
-
         return sum;
 
     }//method son
@@ -91,9 +92,10 @@ public class Lambda03 {
 
 
     //***************************************************************************************************
-    public static int toplaCift(int x) {
 
-        //TASK 02 --> 1'den x'e kadar cift tamsayilari toplayan bir program create ediniz.
+
+    //TASK 02 --> 1'den x'e kadar cift tamsayilari toplayan bir program create ediniz.
+    public static int toplaCift(int x) {
 
         System.out.print("TASK 02 => 1 den " + x + " 'e kadar cift sayilarin toplami : ");
         return IntStream.rangeClosed(1, x).filter(t -> t % 2 == 0).sum();
@@ -103,9 +105,9 @@ public class Lambda03 {
 
     //***************************************************************************************************
 
-    public static int ilkXCiftSayiyiTopla(int x) {
 
-        //TASK 03 --> Ilk x pozitif cift sayiyi toplayan program  create ediniz.
+    //TASK 03 --> Ilk x pozitif cift sayiyi toplayan program  create ediniz.
+    public static int ilkXCiftSayiyiTopla(int x) {
 
         System.out.print("TASK 03 => ilk " + x + " CiftSayiyiTopla : ");
         return IntStream.
