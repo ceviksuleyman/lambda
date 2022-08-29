@@ -231,7 +231,7 @@ public class Lambda01 {
                         limit(1); //ilk elemani aldi
         //.forEach(Methods::yazdir);
 
-        System.out.println(Arrays.toString(maxEleman.toArray()));//stream'a array'a cevirip yazdir
+        System.out.println(Arrays.toString(maxEleman.toArray()));//stream'i array'a cevirip yazdir
 
     }//method son
 
