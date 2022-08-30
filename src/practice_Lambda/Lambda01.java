@@ -175,7 +175,7 @@ public class Lambda01 {
                 map(t -> t.length() * t.length()).
                 distinct().
                 sorted(Comparator.reverseOrder()).
-                forEach(t -> System.out.print(t + " "));
+                forEach(Methods::yazdirprint);
 
 
     }//method son
