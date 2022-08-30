@@ -53,11 +53,13 @@ public class Lambda03 {
     public static void listtekSayilarinKaresiToplami(List<Integer> list) {
 
       /*
-      TASK advanced 02 : Bir Integer lis olusturun ve bu list'teki yum sayilarin karesinin toplamini bulan
+      TASK advanced 02 : Bir Integer lis olusturun ve list'teki tum sayilarin karesinin toplamini bulan
       method create edin.
      */
         System.out.print("TASK advanced 02 => 1.yontem listteki sayilarin kareleri toplami : ");
-        System.out.println(list.stream().map(t -> t * t).reduce(0, (t, u) -> t + u));
+        System.out.println(list.stream().map(t -> t * t).
+                reduce(0, Integer::sum)); // reduce(0, (t, u) -> t + u) farkli yontem
+
 
         System.out.print("TASK advanced 02 => 2.yontem listteki sayilarin kareleri toplami : ");
         System.out.println(list.stream().mapToInt(t -> t * t).sum());
