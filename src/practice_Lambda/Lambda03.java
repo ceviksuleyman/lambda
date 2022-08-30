@@ -162,7 +162,7 @@ public class Lambda03 {
     //TASK 07 --> Istenilen bir sayinin faktoriyelini hesaplayan programi  create ediniz.
     public static int istenenSayiFactorial(int x) {
 
-        System.out.print("TASK 07 => " + x + " Faktoryel : ");
+        System.out.print("TASK 07 => " + x + "! = ");
         //1.yontem
         return IntStream.rangeClosed(1, x).reduce(Math::multiplyExact).stream().sum();
 
