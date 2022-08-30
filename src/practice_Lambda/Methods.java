@@ -19,14 +19,4 @@ public class Methods {
         System.out.println(obj + " ");
     }
 
-    public static int karaktersayisi(String str) {
-
-        int count = 0;
-        for (int i = 0; i < str.length(); i++) {
-
-            count++;
-
-        }
-        return count;
-    }
 }

@@ -13,7 +13,6 @@ public class Lambda01 {
     static List<String> menu = new ArrayList<>(Arrays.asList("kusleme", "kusleme", "adana", "trilice", "havucdilim", "buryan", "kokorec", "kuzutandir", "guvec"));
 
 
-
     // TASK-1 : Input olarak verilen listteki isimlerden icinde 'a' harfi bulunanlari silen bir code create ediniz.
     // INPUT : list1={"Ali","Veli","Ayse","Fatma","Omer"}
     // OUTPUT : [Veli,Omer]
@@ -133,6 +132,18 @@ public class Lambda01 {
 
         // Task-7 : list elemanlarinin character sayisini sirali olarak tekrarsiz yazdirin.
 
+        System.out.print("TASK-7 =>  ");
+        list.stream().distinct().
+                sorted(Comparator.comparing(String::length)).
+                forEach(t -> System.out.print(t+" "));
+
+        System.out.println();
+
+        list.stream().
+                map(String::length).
+                sorted().distinct().
+                forEach(Methods::yazdirprint);
+
     }//method son
 
 
@@ -156,6 +167,15 @@ public class Lambda01 {
 
         // Task-9 : listin elemanlarinin cift sayili karakterlerinin karelerini hesaplayan ve karelerini tekrarsiz
         // buyukten kucuge dogru sirali print ediniz.
+
+
+        System.out.print("TASK-9 =>  ");
+        list.stream().
+                filter(t -> t.length() % 2 == 0).
+                map(t -> t.length() * t.length()).
+                distinct().
+                sorted(Comparator.reverseOrder()).
+                forEach(t -> System.out.print(t + " "));
 
 
     }//method son

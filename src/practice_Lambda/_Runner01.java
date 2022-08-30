@@ -16,7 +16,11 @@ public class _Runner01 extends Lambda01{
         System.out.println("\n------------------");
         alfabetikBuyukHarfTekrarsiz(menu);
         System.out.println("\n---------------------");
+        strKarakterSayisiYazdir(menu);
+        System.out.println("\n-------------------");
         sonHarfeGoreTersSira(menu);
+        System.out.println("\n-------------------");
+        karakterCiftKareBuyuktenKucuge(menu);
         System.out.println("\n-------------------");
         karakterSayisi7denBuyuk(menu);
         System.out.println("-------------------");
@@ -27,6 +31,7 @@ public class _Runner01 extends Lambda01{
         karakterSayisiEnFazlaEleman(menu);
         System.out.println("-------------------");
         sonHarfeGoreSiralaIlkHaricElmanlariYaz(menu);
+        System.out.println("\n-------------------");
 
 
 
