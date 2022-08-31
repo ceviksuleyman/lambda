@@ -53,7 +53,7 @@ public class Lambda03 {
     public static void listtekSayilarinKaresiToplami(List<Integer> list) {
 
       /*
-      TASK advanced 02 : Bir Integer lis olusturun ve list'teki tum sayilarin karesinin toplamini bulan
+      TASK advanced 02 : Bir Integer list olusturun ve list'teki tum sayilarin karesinin toplamini bulan
       method create edin.
      */
         System.out.print("TASK advanced 02 => 1.yontem listteki sayilarin kareleri toplami : ");

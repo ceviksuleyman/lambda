@@ -135,7 +135,7 @@ public class Lambda01 {
         System.out.print("TASK-7 =>  \n");
         list.stream().distinct().
                 sorted(Comparator.comparing(String::length)).
-                forEach(t -> System.out.print(t+" "));
+                forEach(t -> System.out.print(t + " "));
 
         System.out.println();
 
